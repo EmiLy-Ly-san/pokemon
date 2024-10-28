@@ -1,4 +1,7 @@
 import "./App.css";
+import Header from "./components/Header";
+import Main from "./components/Main";
+import Footer from "./components/Footer";
 
 const pokedex =[
   {
@@ -33,7 +36,11 @@ const pokemonList = [
 
 
 function App() {
-  return <></>;
+  return <>
+   <Header />
+   <Main pokedex={pokedex}/>
+   <Footer />
+  </>;
 }
 
 export default App;
