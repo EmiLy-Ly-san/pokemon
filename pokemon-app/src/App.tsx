@@ -3,44 +3,30 @@ import Header from "./components/Header";
 import Main from "./components/Main";
 import Footer from "./components/Footer";
 
-const pokedex =[
+const pokedex = [
   {
     name: "Bulbizarre",
-    imgSrc:"",
-    types: ["",""],
-    description:
-  }
-]
-
-
-const pokemonList = [
-  {
-     
-  },
-  {
-    name: "Herbizarre",
-    imgSrc:
-  },
-  {
-    name: "FLorizarre",
-    imgSrc:
-  },
-  {
-    name: "Salamèche",
-    imgSrc:
-  },
-  {
-    name: "Mew",
+    imgSrc: "",
+    types: ["", ""],
+    description: "Coucou",
   },
 ];
 
+const typesDatas = [
+  {
+    name: "normal",
+    icon: "",
+  },
+];
 
 function App() {
-  return <>
-   <Header />
-   <Main pokedex={pokedex}/>
-   <Footer />
-  </>;
+  return (
+    <>
+      <Header />
+      <Main pokedex={pokedex} />
+      <Footer />
+    </>
+  );
 }
 
 export default App;
