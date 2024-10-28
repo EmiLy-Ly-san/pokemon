@@ -1,4 +1,7 @@
 import "./App.css";
+import Header from "./components/Header";
+import Main from "./components/Main";
+import Footer from "./components/Footer";
 
 const pokedex = [
   {
@@ -909,106 +912,12 @@ const pokedex = [
   },
 ];
 
-// <img class="cani" src="images/Miniature_58.png"></img>
-// <img class="arca" src="images/Miniature_59.png"></img>
-// <img class="ptit" src="images/Miniature_60.png"></img>
-// <img class="teta" src="images/Miniature_61.png"></img>
-// <img class="tarta" src="images/Miniature_62.png"></img>
-// <img class="abra" src="images/Miniature_63.png"></img>
-// <img class="kada" src="images/Miniature_64.png"></img>
-// <img class="alak" src="images/Miniature_65.png"></img>
-// <img class="macho" src="images/Miniature_66.png"></img>
-// <img class="machop" src="images/Miniature_67.png"></img>
-// <img class="mako" src="images/Miniature_68.png"></img>
-// <img class="cheti" src="images/Miniature_69.png"></img>
-// <img class="bousti" src="images/Miniature_70.png"></img>
-// <img class="empi" src="images/Miniature_71.png"></img>
-// <img class="tenta" src="images/Miniature_72.png"></img>
-// <img class="tentac" src="images/Miniature_73.png"></img>
-// <img class="raca" src="images/Miniature_74.png"></img>
-// <img class="grava" src="images/Miniature_75.png"></img>
-// <img class="grolem" src="images/Miniature_76.png"></img>
-// <img class="pony" src="images/Miniature_77.png"></img>
-// <img class="galo" src="images/Miniature_78.png"></img>
-// <img class="ramo" src="images/Miniature_79.png"></img>
-// <img class="flaga" src="images/Miniature_80.png"></img>
-// <img class="magne" src="images/Miniature_81.png"></img>
-// <img class="magnon" src="images/Miniature_82.png"></img>
-// <img class="canar" src="images/Miniature_83.png"></img>
-// <img class="doduo" src="images/Miniature_84.png"></img>
-// <img class="dodri" src="images/Miniature_85.png"></img>
-// <img class="ota" src="images/Miniature_86.png"></img>
-// <img class="laman" src="images/Miniature_87.png"></img>
-// <img class="tadm" src="images/Miniature_88.png"></img>
-// <img class="grota" src="images/Miniature_89.png"></img>
-// <img class="koki" src="images/Miniature_90.png"></img>
-// <img class="crusta" src="images/Miniature_91.png"></img>
-// <img class="fanto" src="images/Miniature_92.png"></img>
-// <img class="spectr" src="images/Miniature_93.png"></img>
-// <img class="ecto" src="images/Miniature_94.png"></img>
-// <img class="onix" src="images/Miniature_95.png"></img>
-// <img class="sopo" src="images/Miniature_96.png"></img>
-// <img class="hypno" src="images/Miniature_97.png"></img>
-// <img class="krab" src="images/Miniature_98.png"></img>
-// <img class="krabo" src="images/Miniature_99.png"></img>
-// <img class="volto" src="images/Miniature_100.png"></img>
-// <img class="electro" src="images/Miniature_101.png"></img>
-// <img class="noeu" src="images/Miniature_102.png"></img>
-// <img class="noad" src="images/Miniature_103.png"></img>
-// <img class="osse" src="images/Miniature_104.png"></img>
-// <img class="ossa" src="images/Miniature_105.png"></img>
-// <img class="kick" src="images/Miniature_106.png"></img>
-// <img class="tygn" src="images/Miniature_107.png"></img>
-// <img class="excel" src="images/Miniature_108.png"></img>
-// <img class="smog" src="images/Miniature_109.png"></img>
-// <img class="smogro" src="images/Miniature_110.png"></img>
-// <img class="rhino" src="images/Miniature_111.png"></img>
-// <img class="rhinof" src="images/Miniature_112.png"></img>
-// <img class="levei" src="images/Miniature_113.png"></img>
-// <img class="sacq" src="images/Miniature_114.png"></img>
-// <img class="kangou" src="images/Miniature_115.png"></img>
-// <img class="hypo" src="images/Miniature_116.png"></img>
-// <img class="hypoc" src="images/Miniature_117.png"></img>
-// <img class="poissi" src="images/Miniature_118.png"></img>
-// <img class="poisso" src="images/Miniature_119.png"></img>
-// <img class="stari" src="images/Miniature_120.png"></img>
-// <img class="staross" src="images/Miniature_121.png"></img>
-// <img class="mime" src="images/Miniature_122.png"></img>
-// <img class="insec" src="images/Miniature_123.png"></img>
-// <img class="lipo" src="images/Miniature_124.png"></img>
-// <img class="elek" src="images/Miniature_125.png"></img>
-// <img class="magma" src="images/Miniature_126.png"></img>
-// <img class="scara" src="images/Miniature_127.png"></img>
-// <img class="tauro" src="images/Miniature_128.png"></img>
-// <img class="magic" src="images/Miniature_129.png"></img>
-// <img class="levia" src="images/Miniature_130.png"></img>
-// <img class="lock" src="images/Miniature_131.png"></img>
-// <img class="metam" src="images/Miniature_132.png"></img>
-// <img class="evo" src="images/Miniature_133.png"></img>
-// <img class="aqua" src="images/Miniature_134.png"></img>
-// <img class="volta" src="images/Miniature_135.png"></img>
-// <img class="pyro" src="images/Miniature_136.png"></img>
-// <img class="pory" src="images/Miniature_137.png"></img>
-// <img class="amon" src="images/Miniature_138.png"></img>
-// <img class="amonis" src="images/Miniature_139.png"></img>
-// <img class="kabu" src="images/Miniature_140.png"></img>
-// <img class="kabut" src="images/Miniature_141.png"></img>
-// <img class="ptera" src="images/Miniature_142.png"></img>
-// <img class="ronfl" src="images/Miniature_143.png"></img>
-// <img class="artik" src="images/Miniature_144.png"></img>
-// <img class="electo" src="images/Miniature_145.png"></img>
-// <img class="sulfu" src="images/Miniature_146.png"></img>
-// <img class="mini" src="images/Miniature_147.png"></img>
-// <img class="draco" src="images/Miniature_148.png"></img>
-// <img class="draloss" src="images/Miniature_149.png"></img>
-// <img class="mewtwo" src="images/Miniature_150.png"></img>
-// <img class="mew" src="images/Miniature_151.png"></img>
-
 function App() {
   return (
     <>
-      <p>{pokedex[112].name}</p>
-      <img src={pokedex[112].imgSrc} alt="" srcset="" />
+      <Header />
+      <Main pokedex={pokedex} />
+      <Footer />
     </>
   );
 }
