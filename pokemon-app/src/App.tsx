@@ -1,4 +1,7 @@
 import "./App.css";
+import Header from "./components/Header";
+import Main from "./components/Main";
+import Footer from "./components/Footer";
 
 const pokedex = [
   {
@@ -912,8 +915,9 @@ const pokedex = [
 function App() {
   return (
     <>
-      <p>{pokedex[19].name}</p>
-      <img src={pokedex[19].imgSrc} alt="" srcset="" />
+      <Header />
+      <Main pokedex={pokedex} />
+      <Footer />
     </>
   );
 }
