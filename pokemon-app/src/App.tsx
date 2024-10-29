@@ -11,121 +11,141 @@ const pokedex = [
     name: "Bulbizarre",
     imgSrc: "../src/assets/Miniature_0001_EV.png",
     types: ["Plante", "Poison"],
-    description: "Lorem",
+    description:
+      "Une graine étrange est plantée sur son dos dès la naissance. Elle grandit avec lui.",
   },
   {
     name: "Herbizarre",
     imgSrc: "../src/assets/Miniature_0002_EV.png",
     types: ["Plante", "Poison"],
-    description: "Lorem",
+    description:
+      "Il est couvert d'une énorme plante fleurie. Sa couleur est plus foncée que Bulbizarre.",
   },
   {
     name: "Florizarre",
     imgSrc: "../src/assets/Miniature_0003_EV.png",
     types: ["Plante", "Poison"],
-    description: "Lorem",
+    description:
+      "Sa fleur dégage un parfum apaisant capable de calmer les émotions.",
   },
   {
     name: "Salamèche",
     imgSrc: "../src/assets/Miniature_0004_EV.png",
     types: ["Feu"],
-    description: "Lorem",
+    description:
+      "Préfère les endroits chauds. En cas de pluie, de la vapeur se forme autour de lui.",
   },
   {
     name: "Reptincel",
     imgSrc: "../src/assets/Miniature_0005_EV.png",
     types: ["Feu"],
-    description: "Lorem",
+    description:
+      "Quand il s'énerve, la flamme de sa queue s'intensifie et prend une couleur bleue.",
   },
   {
     name: "Dracaufeu",
     imgSrc: "../src/assets/Miniature_0006_EV.png",
     types: ["Feu", "Vol"],
-    description: "Lorem",
+    description:
+      "Capable de fondre des rochers avec son souffle brûlant. Il provoque des incendies sans le vouloir.",
   },
   {
     name: "Carapuce",
     imgSrc: "../src/assets/Miniature_0007_EV.png",
     types: ["Eau"],
-    description: "Lorem",
+    description:
+      "Son dos dur le protège des attaques. Il recule dans sa carapace pour se défendre.",
   },
   {
     name: "Carabaffe",
     imgSrc: "../src/assets/Miniature_0008_EV.png",
     types: ["Eau"],
-    description: "Lorem",
+    description:
+      "Il est en partie aquatique. Les traînées de mousse sur sa carapace montrent son âge.",
   },
   {
     name: "Tortank",
     imgSrc: "../src/assets/Miniature_0009_EV.png",
     types: ["Eau"],
-    description: "Lorem",
+    description:
+      "Ses puissants canons lui permettent de projeter de l'eau à grande vitesse.",
   },
   {
     name: "Chenipan",
     imgSrc: "../src/assets/Miniature_0010_DEPS.png",
     types: ["Insecte"],
-    description: "Lorem",
+    description:
+      "Son court corps est recouvert d'une peau dure. Il grimpe aux arbres pour se nourrir de feuilles.",
   },
   {
     name: "Chrysacier",
     imgSrc: "../src/assets/Miniature_0011_DEPS.png",
     types: ["Insecte"],
-    description: "Lorem",
+    description:
+      "Bien qu'il ne bouge pas beaucoup, son corps se renforce pour devenir un papillon.",
   },
   {
     name: "Papilusion",
     imgSrc: "../src/assets/Miniature_0012_DEPS.png",
     types: ["Insecte", "Vol"],
-    description: "Lorem",
+    description:
+      "Ses ailes sont recouvertes d'une poudre empoisonnée. Plus vieux, il peut sécréter de la poudre paralysante.",
   },
   {
     name: "Aspicot",
     imgSrc: "../src/assets/Miniature_0013_DEPS.png",
     types: ["Insecte", "Poison"],
-    description: "Lorem",
+    description:
+      "Son dard venimeux est extrêmement dangereux. Son corps est recouvert de petites pointes.",
   },
   {
     name: "Coconfort",
     imgSrc: "../src/assets/Miniature_0014_DEPS.png",
     types: ["Insecte", "Poison"],
-    description: "Lorem",
+    description:
+      "Il se cache dans les buissons et les forêts, restant immobile jusqu'à son évolution.",
   },
   {
     name: "Dardargnan",
     imgSrc: "../src/assets/Miniature_0015_DEPS.png",
     types: ["Insecte", "Poison"],
-    description: "Lorem",
+    description:
+      "Son vol rapide et ses aiguillons venimeux lui permettent de paralyser ses proies en un instant.",
   },
   {
     name: "Roucool",
     imgSrc: "../src/assets/Miniature_0016_DEPS.png",
     types: ["Normal", "Vol"],
-    description: "Lorem",
+    description:
+      "Très docile, il aime picorer des graines. S'il est attaqué, il déploie ses ailes et tente de s'enfuir.",
   },
   {
     name: "Roucoups",
     imgSrc: "../src/assets/Miniature_0017_DEPS.png",
     types: ["Normal", "Vol"],
-    description: "Lorem",
+    description:
+      "Grâce à ses ailes puissantes, il peut repousser ses adversaires avec de violentes rafales.",
   },
   {
     name: "Roucarnage",
     imgSrc: "../src/assets/Miniature_0018_DEPS.png",
     types: ["Normal", "Vol"],
-    description: "Lorem",
+    description:
+      "Sa taille imposante et ses plumes majestueuses le rendent reconnaissable parmi les oiseaux.",
   },
   {
     name: "Ratata",
     imgSrc: "../src/assets/Miniature_0019_DEPS.png",
     types: ["Normal"],
-    description: "Lorem",
+    description:
+      "Ce rongeur est très rapide et grignote tout ce qui est à sa portée pour se nourrir.",
   },
   {
     name: "Ratatac",
     imgSrc: "../src/assets/Miniature_0020_DEPS.png",
     types: ["Normal"],
-    description: "Lorem",
+    description:
+      "Avec ses grandes incisives, il peut ronger presque tout. Il est aussi très rapide.",
   },
   {
     name: "Piafabec",
@@ -943,17 +963,17 @@ function App() {
   };
 
   return (
-    <
-     <div className="display-site">
-      <Header imagesTypesList={imagesTypesList} />
-      <Main pokedex={pokedex} setCurrentModal={setCurrentModal} />
-      {modalIsOpen ? (
-        <Modal
-          currentModalDescription={currentModalDescription}
-          setModalIsOpen={setModalIsOpen}
-          modalIsOpen={modalIsOpen}
-        />
-      ) : null}
+    <>
+      <div className="display-site">
+        <Header imagesTypesList={imagesTypesList} />
+        <Main pokedex={pokedex} setCurrentModal={setCurrentModal} />
+        {modalIsOpen ? (
+          <Modal
+            currentModalDescription={currentModalDescription}
+            setModalIsOpen={setModalIsOpen}
+            modalIsOpen={modalIsOpen}
+          />
+        ) : null}
       </div>
       <ScrollToTop />
       <Footer />
