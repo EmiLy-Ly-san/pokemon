@@ -10,8 +10,6 @@
 
 .cardHeader {
   background: #dddddd;
-  border-top-left-radius: 1rem;
-  border-top-right-radius: 1rem;
   height: 64px;
   display: flex;
   justify-content: center;
