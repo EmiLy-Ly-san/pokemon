@@ -912,10 +912,28 @@ const pokedex = [
   },
 ];
 
+const imagesTypesList = [
+  { name: " normal", imgSrc: "../src/assets/normal.png" },
+  { name: "eau", imgSrc: "../src/assets/eau.png" },
+  { name: "feu", imgSrc: "../src/assets/feu.png" },
+  { name: "plante", imgSrc: "../src/assets/plante.png" },
+  { name: "electrik", imgSrc: "../src/assets/electrik.png" },
+  { name: "roche", imgSrc: "../src/assets/roche.png" },
+  { name: "sol", imgSrc: "../src/assets/sol.png" },
+  { name: "poison", imgSrc: "../src/assets/poison.png" },
+  { name: "psy", imgSrc: "../src/assets/psy.png" },
+  { name: "vol", imgSrc: "../src/assets/vol.png" },
+  { name: "combat", imgSrc: "../src/assets/combat.png" },
+  { name: "glace", imgSrc: "../src/assets/glace.png" },
+  { name: "spectre", imgSrc: "../src/assets/spectre.png" },
+  { name: "insecte", imgSrc: "../src/assets/insecte.png" },
+  { name: "dragon", imgSrc: "../src/assets/dragon.png" },
+];
+
 function App() {
   return (
     <>
-      <Header />
+      <Header imagesTypesList={imagesTypesList} />
       <Main pokedex={pokedex} />
       <Footer />
     </>

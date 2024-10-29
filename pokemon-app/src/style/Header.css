@@ -1,0 +1,14 @@
+.logopokemon {
+  width: 300px;
+}
+
+header {
+  background-color: #2bb5ff;
+  width: 440px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding-top: 25px;
+}
