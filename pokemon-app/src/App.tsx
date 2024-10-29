@@ -2,6 +2,8 @@ import "./App.css";
 import Header from "./components/Header";
 import Main from "./components/Main";
 import Footer from "./components/Footer";
+import { useState } from "react";
+import ScrollToTop from "./components/ScrollToTop";
 
 const pokedex = [
   {
@@ -931,10 +933,22 @@ const imagesTypesList = [
 ];
 
 function App() {
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [currentModalDescription, setCurrentModalDescription] = useState("");
+
+  const setCurrentModal = (isOpen: boolean, description: string) => {
+    setModalIsOpen(isOpen);
+    setCurrentModalDescription(description);
+  };
+
   return (
     <>
+
       <Header imagesTypesList={imagesTypesList} />
-      <Main pokedex={pokedex} />
+      <Main pokedex={pokedex} setCurrentModal={setCurrentModal} />
+      {modalIsOpen ? <div>{currentModalDescription}</div> : null}
+      {/* Here Modal with currentModalDescription in propriete*/}
+      <ScrollToTop />
       <Footer />
     </>
   );
