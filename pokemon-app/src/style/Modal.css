@@ -11,8 +11,6 @@ body {
   align-items: center;
   padding: 1.5rem;
   border-radius: 1rem;
-  box-shadow: inset 0px 0px 0 3px var(--mainGreen),
-    inset 0px 0px 0 10.5px var(--white);
   position: absolute;
   top: 150px;
   left: 25%;
