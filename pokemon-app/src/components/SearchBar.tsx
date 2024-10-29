@@ -1,23 +1,26 @@
 import { useState } from "react";
 import "../style/SearchBar.css";
+import { Pokemon } from "./Card";
 
-function SearchBar({ pokedex }) {
+interface SearchBarProps {
+  pokedex: Pokemon[];
+  onSearch: (filteredData: Pokemon[]) => void;
+}
+
+function SearchBar({ pokedex, onSearch }: SearchBarProps) {
   const [searchValue, setSearchValue] = useState(""); // Initialize the searchValue state variable as an empty string
-  const [filteredPoke, setFilteredPoke] = useState(pokedex); // Initialize the filteredContacts state variable with the contacts array
+  // Initialize the filteredContacts state variable with the contacts array
 
-  const handleSearch = (e) => {
-    setSearchValue(e.target.value); // Update searchValue state with current text input value
-    if (searchValue) {
-      const filteredData = pokedex.filter((item) => {
-        // Convert all values of the contact object to a string, join     them, convert the string to lowercase and return the contact object if it includes the searchValue
-        return Object.values(item)
-          .join("")
-          .toLowerCase()
-          .includes(searchValue.toLowerCase());
-      });
-      setFilteredPoke(filteredData); // Update filteredContacts state with filtered array
+  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    setSearchValue(value); // Update searchValue state with current text input value
+    if (value) {
+      const filteredData = pokedex.filter((item) =>
+        item.name.toLowerCase().includes(value.toLowerCase())
+      );
+      onSearch(filteredData); // Transmet la liste filtrée à Main
     } else {
-      setFilteredPoke(pokedex); // Reset filteredContacts to all contacts when input is empty
+      onSearch(pokedex); // Remet tous les Pokémons si la recherche est vide
     }
   };
 
@@ -29,12 +32,6 @@ function SearchBar({ pokedex }) {
         value={searchValue}
         placeholder="Recherche"
       />
-      {filteredPoke.map((poke) => (
-        <p key={poke.imgSrc}>
-          <p>Name: {poke.name}</p>
-          <p>Type: {poke.types}</p>
-        </p>
-      ))}
     </>
   );
 }

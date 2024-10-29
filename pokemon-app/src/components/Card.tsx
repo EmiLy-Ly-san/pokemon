@@ -9,7 +9,7 @@ export interface Pokemon {
 
 export type CardProps = Pokemon;
 
-export default function Card({ name, imgSrc, types, description }: CardProps) {
+export default function Card({ name, imgSrc, types }: CardProps) {
   return (
     <article className="card">
       <div className="cardHeader">
