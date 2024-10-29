@@ -1,6 +1,7 @@
 import "./App.css";
 import Header from "./components/Header";
 import Main from "./components/Main";
+import Modal from "./components/Modal";
 import Footer from "./components/Footer";
 import { useState } from "react";
 import ScrollToTop from "./components/ScrollToTop";
@@ -942,13 +943,18 @@ function App() {
   };
 
   return (
-    <>
-      <div className="display-site">
-        <Header imagesTypesList={imagesTypesList} />
-        <Main pokedex={pokedex} setCurrentModal={setCurrentModal} />
-        {modalIsOpen ? <div>{currentModalDescription}</div> : null}
+    <
+     <div className="display-site">
+      <Header imagesTypesList={imagesTypesList} />
+      <Main pokedex={pokedex} setCurrentModal={setCurrentModal} />
+      {modalIsOpen ? (
+        <Modal
+          currentModalDescription={currentModalDescription}
+          setModalIsOpen={setModalIsOpen}
+          modalIsOpen={modalIsOpen}
+        />
+      ) : null}
       </div>
-      {/* Here Modal with currentModalDescription in propriete*/}
       <ScrollToTop />
       <Footer />
     </>

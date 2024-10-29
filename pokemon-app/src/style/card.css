@@ -11,8 +11,6 @@
 
 .cardHeader {
   background: #dddddd;
-  border-top-left-radius: 1rem;
-  border-top-right-radius: 1rem;
   height: 64px;
   display: flex;
   justify-content: center;
@@ -61,7 +59,7 @@
   background: #63bc5a;
 }
 
-.background-Elektric {
+.background-Électrik {
   background: #f4d23c;
 }
 
