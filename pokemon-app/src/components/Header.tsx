@@ -1,10 +1,20 @@
 import TypesList from "./TypesList";
+import { Type } from "./Type";
+import "../style/Header.css";
 
-export default function Header() {
+interface HeaderProps {
+  imagesTypesList: Type[];
+}
+
+export default function Header({ imagesTypesList }: HeaderProps) {
   return (
     <header>
-      <img src="" alt="logo Pokemon" />
-      <TypesList />
+      <img
+        className="logopokemon"
+        src="../src/assets/pokemon-logo.png"
+        alt="logo Pokemon"
+      />
+      <TypesList imagesTypesList={imagesTypesList} />
     </header>
   );
 }
