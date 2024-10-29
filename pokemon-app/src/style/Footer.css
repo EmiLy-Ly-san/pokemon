@@ -1,0 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Audiowide&display=swap");
+
+.Footer {
+  background-color: #ffcc00;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Audiowide";
+}
+
+.footer h2 {
+}
