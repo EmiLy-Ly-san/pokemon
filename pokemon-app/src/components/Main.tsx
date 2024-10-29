@@ -2,13 +2,14 @@ import CardsList from "./CardsList";
 import { Pokemon } from "./Card";
 import SearchBar from "./SearchBar";
 import { useState } from "react";
+import "../style/main.css";
 
 interface MainProps {
   pokedex: Pokemon[];
   setCurrentModal: (isOpen: boolean, description: string) => void;
 }
 
-export default function Main({ pokedex }: MainProps) {
+export default function Main({ pokedex, setCurrentModal }: MainProps) {
   const [filteredPoke, setFilteredPoke] = useState(pokedex);
 
   const handleSearch = (searchResults: Pokemon[]) => {

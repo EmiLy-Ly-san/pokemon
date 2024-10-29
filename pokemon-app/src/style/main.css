@@ -1,0 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Audiowide&display=swap");
+
+h1 {
+  font-family: "Audiowide";
+  color: #0279b9;
+  font-weight: 400;
+  font-size: 64px;
+  text-align: center;
+}
