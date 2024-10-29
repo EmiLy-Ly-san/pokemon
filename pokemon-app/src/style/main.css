@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Audiowide&display=swap");
 
+main {
+  padding-bottom: 3rem;
+}
+
 h1 {
   font-family: "Audiowide";
   color: #0279b9;
