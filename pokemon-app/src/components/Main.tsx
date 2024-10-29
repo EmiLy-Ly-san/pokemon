@@ -7,9 +7,14 @@ import "../style/main.css";
 interface MainProps {
   pokedex: Pokemon[];
   setCurrentModal: (isOpen: boolean, description: string) => void;
+  pokemons: Pokemon[];
 }
 
-export default function Main({ pokedex, setCurrentModal }: MainProps) {
+export default function Main({
+  pokedex,
+  setCurrentModal,
+  pokemons,
+}: MainProps) {
   const [filteredPoke, setFilteredPoke] = useState(pokedex);
 
   const handleSearch = (searchResults: Pokemon[]) => {
@@ -26,7 +31,11 @@ export default function Main({ pokedex, setCurrentModal }: MainProps) {
         />
       </h1>
       <SearchBar pokedex={pokedex} onSearch={handleSearch} />
-      <CardsList pokedex={filteredPoke} setCurrentModal={setCurrentModal} />
+      <CardsList
+        pokedex={filteredPoke}
+        setCurrentModal={setCurrentModal}
+        pokemons={pokemons}
+      />
     </main>
   );
 }

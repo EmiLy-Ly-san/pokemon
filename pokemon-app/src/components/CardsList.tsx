@@ -5,15 +5,16 @@ import "../style/cardsList.css";
 interface CardsListProps {
   pokedex: Pokemon[];
   setCurrentModal: (isOpen: boolean, description: string) => void;
+  pokemons: Pokemon[];
 }
 
 export default function CardsList({
-  pokedex,
   setCurrentModal,
+  pokemons,
 }: CardsListProps) {
   return (
     <section className="cardsList">
-      {pokedex.map((pokemon) => {
+      {pokemons.map((pokemon) => {
         return (
           <Card
             {...pokemon}
