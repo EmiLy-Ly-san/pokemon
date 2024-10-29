@@ -1,13 +1,15 @@
 import TypesList from "./TypesList";
-import { Type } from "./Type";
+import { Type } from "./TypePoke";
 import "../style/Header.css";
 
 interface HeaderProps {
   imagesTypesList: Type[];
-  id: string;
+  sortPokemons: (
+    event: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => void;
 }
 
-export default function Header({ imagesTypesList }: HeaderProps) {
+export default function Header({ imagesTypesList, sortPokemons }: HeaderProps) {
   return (
     <header>
       <img
@@ -15,7 +17,10 @@ export default function Header({ imagesTypesList }: HeaderProps) {
         src="../src/assets/pokemon-logo.png"
         alt="logo Pokemon"
       />
-      <TypesList imagesTypesList={imagesTypesList} />
+      <TypesList
+        imagesTypesList={imagesTypesList}
+        sortPokemons={sortPokemons}
+      />
     </header>
   );
 }

@@ -1,19 +1,23 @@
 import CardsList from "./CardsList";
 import { Pokemon } from "./Card";
 import SearchBar from "./SearchBar";
-import { useState } from "react";
 import "../style/main.css";
 
 interface MainProps {
-  pokedex: Pokemon[];
   setCurrentModal: (isOpen: boolean, description: string) => void;
+  pokemons: Pokemon[];
+  setPokemons: (pokemons: Pokemon[]) => void;
 }
 
-export default function Main({ pokedex, setCurrentModal }: MainProps) {
-  const [filteredPoke, setFilteredPoke] = useState(pokedex);
+export default function Main({
+  setCurrentModal,
+  pokemons,
+  setPokemons,
+}: MainProps) {
+  // const [filteredPoke, setFilteredPoke] = useState(pokedex);// 💣 ancien State de Valou qui fait la meme chose que le set initial dans App avec les meme donnes ce qui permet de faire un double filtre 👌
 
   const handleSearch = (searchResults: Pokemon[]) => {
-    setFilteredPoke(searchResults);
+    setPokemons(searchResults);
   };
   return (
     <main>
@@ -25,8 +29,8 @@ export default function Main({ pokedex, setCurrentModal }: MainProps) {
           className="pokeball"
         />
       </h1>
-      <SearchBar pokedex={pokedex} onSearch={handleSearch} />
-      <CardsList pokedex={filteredPoke} setCurrentModal={setCurrentModal} />
+      <SearchBar pokemons={pokemons} onSearch={handleSearch} />
+      <CardsList setCurrentModal={setCurrentModal} pokemons={pokemons} />
     </main>
   );
 }
