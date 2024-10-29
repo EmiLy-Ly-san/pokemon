@@ -3,7 +3,7 @@ import Header from "./components/Header";
 import Main from "./components/Main";
 import Modal from "./components/Modal";
 import Footer from "./components/Footer";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ScrollToTop from "./components/ScrollToTop";
 
 const pokedex = [
@@ -936,37 +936,61 @@ const pokedex = [
 ];
 
 const imagesTypesList = [
-  { name: " normal", imgSrc: "../src/assets/normal.png" },
-  { name: "eau", imgSrc: "../src/assets/eau.png" },
-  { name: "feu", imgSrc: "../src/assets/feu.png" },
-  { name: "plante", imgSrc: "../src/assets/plante.png" },
-  { name: "electrik", imgSrc: "../src/assets/electrik.png" },
-  { name: "roche", imgSrc: "../src/assets/roche.png" },
-  { name: "sol", imgSrc: "../src/assets/sol.png" },
-  { name: "poison", imgSrc: "../src/assets/poison.png" },
-  { name: "psy", imgSrc: "../src/assets/psy.png" },
-  { name: "vol", imgSrc: "../src/assets/vol.png" },
-  { name: "combat", imgSrc: "../src/assets/combat.png" },
-  { name: "glace", imgSrc: "../src/assets/glace.png" },
-  { name: "spectre", imgSrc: "../src/assets/spectre.png" },
-  { name: "insecte", imgSrc: "../src/assets/insecte.png" },
-  { name: "dragon", imgSrc: "../src/assets/dragon.png" },
+  { name: "Normal", imgSrc: "../src/assets/normal.png" },
+  { name: "Eau", imgSrc: "../src/assets/eau.png" },
+  { name: "Feu", imgSrc: "../src/assets/feu.png" },
+  { name: "Plante", imgSrc: "../src/assets/plante.png" },
+  { name: "Électrik", imgSrc: "../src/assets/electrik.png" },
+  { name: "Roche", imgSrc: "../src/assets/roche.png" },
+  { name: "Sol", imgSrc: "../src/assets/sol.png" },
+  { name: "Poison", imgSrc: "../src/assets/poison.png" },
+  { name: "Psy", imgSrc: "../src/assets/psy.png" },
+  { name: "Vol", imgSrc: "../src/assets/vol.png" },
+  { name: "Combat", imgSrc: "../src/assets/combat.png" },
+  { name: "Glace", imgSrc: "../src/assets/glace.png" },
+  { name: "Spectre", imgSrc: "../src/assets/spectre.png" },
+  { name: "Insecte", imgSrc: "../src/assets/insecte.png" },
+  { name: "Dragon", imgSrc: "../src/assets/dragon.png" },
 ];
 
 function App() {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [currentModalDescription, setCurrentModalDescription] = useState("");
+  const [pokemons, setPokemons] = useState(pokedex);
 
   const setCurrentModal = (isOpen: boolean, description: string) => {
     setModalIsOpen(isOpen);
     setCurrentModalDescription(description);
   };
 
+  useEffect(() => {
+    if (modalIsOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+  }, [modalIsOpen]); // 🌈 Des que je fais quelque chose avec une des variables du tableau
+  //qui est en paramètre de useEffect, il existe ma fonction fléchée en premier paramètre
+
+  const sortPokemons = (
+    event: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => {
+    const newPokemons = pokedex.filter((pokemon) => {
+      return pokemon.types.includes(`${event.currentTarget.dataset.type}`);
+    });
+    console.log(`${event.currentTarget.dataset.type}`);
+    setPokemons(newPokemons);
+  };
+
   return (
     <>
       <div className="display-site">
-        <Header imagesTypesList={imagesTypesList} />
-        <Main pokedex={pokedex} setCurrentModal={setCurrentModal} />
+        <Header imagesTypesList={imagesTypesList} sortPokemons={sortPokemons} />
+        <Main
+          setCurrentModal={setCurrentModal}
+          pokemons={pokemons}
+          setPokemons={setPokemons}
+        />
         {modalIsOpen ? (
           <Modal
             currentModalDescription={currentModalDescription}

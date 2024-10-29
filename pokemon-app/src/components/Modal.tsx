@@ -1,5 +1,4 @@
 import "../style/Modal.css";
-
 interface ModalProps {
   currentModalDescription: string;
   modalIsOpen: boolean;

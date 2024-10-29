@@ -1,16 +1,24 @@
-import TypePoke from "./Type";
-import { Type } from "./Type";
+import TypePoke from "./TypePoke.tsx";
+import { Type } from "./TypePoke.tsx";
 
 export interface TypesListProps {
   imagesTypesList: Type[];
+  sortPokemons: (
+    event: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => void;
 }
 
-export default function TypesList({ imagesTypesList }: TypesListProps) {
+export default function TypesList({
+  imagesTypesList,
+  sortPokemons,
+}: TypesListProps) {
   return (
     <>
       <section className="listType">
-        {imagesTypesList.map((Type) => {
-          return <TypePoke {...Type} />;
+        {imagesTypesList.map((type) => {
+          return (
+            <TypePoke {...type} key={type.name} sortPokemons={sortPokemons} />
+          );
         })}
       </section>
     </>
