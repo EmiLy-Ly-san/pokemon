@@ -929,7 +929,6 @@ function App() {
       <Main pokedex={pokedex} setCurrentModal={setCurrentModal} />
       {modalIsOpen ? <div>{currentModalDescription}</div> : null}
       {/* Here Modal with currentModalDescription in propriete*/}
-      <Main pokedex={pokedex} />
       <ScrollToTop />
       <Footer />
     </>
