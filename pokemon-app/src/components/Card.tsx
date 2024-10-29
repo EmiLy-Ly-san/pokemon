@@ -21,8 +21,7 @@ export default function Card({
   return (
     <article
       className="card"
-      onClick={() => setCurrentModal(true, description)}
-    >
+      onClick={() => setCurrentModal(true, description)}>
       <div className="cardHeader">
         <h2 className="titleCard">{name}</h2>
       </div>
