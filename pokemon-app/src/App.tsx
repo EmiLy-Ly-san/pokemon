@@ -949,11 +949,7 @@ function App() {
   return (
     <>
       <div className="display-site">
-
-
-
         <Header imagesTypesList={imagesTypesList} id="topPage" />
- main
         <Main pokedex={pokedex} setCurrentModal={setCurrentModal} />
         {modalIsOpen ? (
           <Modal
