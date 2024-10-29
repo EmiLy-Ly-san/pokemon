@@ -3,6 +3,7 @@ import Header from "./components/Header";
 import Main from "./components/Main";
 import Footer from "./components/Footer";
 import { useState } from "react";
+import ScrollToTop from "./components/ScrollToTop";
 
 const pokedex = [
   {
@@ -913,6 +914,24 @@ const pokedex = [
   },
 ];
 
+const imagesTypesList = [
+  { name: " normal", imgSrc: "../src/assets/normal.png" },
+  { name: "eau", imgSrc: "../src/assets/eau.png" },
+  { name: "feu", imgSrc: "../src/assets/feu.png" },
+  { name: "plante", imgSrc: "../src/assets/plante.png" },
+  { name: "electrik", imgSrc: "../src/assets/electrik.png" },
+  { name: "roche", imgSrc: "../src/assets/roche.png" },
+  { name: "sol", imgSrc: "../src/assets/sol.png" },
+  { name: "poison", imgSrc: "../src/assets/poison.png" },
+  { name: "psy", imgSrc: "../src/assets/psy.png" },
+  { name: "vol", imgSrc: "../src/assets/vol.png" },
+  { name: "combat", imgSrc: "../src/assets/combat.png" },
+  { name: "glace", imgSrc: "../src/assets/glace.png" },
+  { name: "spectre", imgSrc: "../src/assets/spectre.png" },
+  { name: "insecte", imgSrc: "../src/assets/insecte.png" },
+  { name: "dragon", imgSrc: "../src/assets/dragon.png" },
+];
+
 function App() {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [currentModalDescription, setCurrentModalDescription] = useState("");
@@ -924,10 +943,12 @@ function App() {
 
   return (
     <>
-      <Header />
+
+      <Header imagesTypesList={imagesTypesList} />
       <Main pokedex={pokedex} setCurrentModal={setCurrentModal} />
       {modalIsOpen ? <div>{currentModalDescription}</div> : null}
       {/* Here Modal with currentModalDescription in propriete*/}
+      <ScrollToTop />
       <Footer />
     </>
   );
