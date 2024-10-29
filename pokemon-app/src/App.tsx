@@ -213,13 +213,13 @@ const pokedex = [
   {
     name: "Mélofée",
     imgSrc: "../src/assets/Miniature_35.png",
-    types: ["Fée"],
+    types: ["Normal"],
     description: "Lorem",
   },
   {
     name: "Mélodelfe",
     imgSrc: "../src/assets/Miniature_36.png",
-    types: ["Fée"],
+    types: ["Normal"],
     description: "Lorem",
   },
   {
@@ -237,13 +237,13 @@ const pokedex = [
   {
     name: "Rondoudou",
     imgSrc: "../src/assets/Miniature_39.png",
-    types: ["Normal", "Fée"],
+    types: ["Normal"],
     description: "Lorem",
   },
   {
     name: "Grodoudou",
     imgSrc: "../src/assets/Miniature_40.png",
-    types: ["Normal", "Fée"],
+    types: ["Normal"],
     description: "Lorem",
   },
   {
@@ -489,13 +489,13 @@ const pokedex = [
   {
     name: "Magnéti",
     imgSrc: "../src/assets/Miniature_81.png",
-    types: ["Électrik", "Acier"],
+    types: ["Électrik"],
     description: "Lorem",
   },
   {
     name: "Magnéton",
     imgSrc: "../src/assets/Miniature_82.png",
-    types: ["Électrik", "Acier"],
+    types: ["Électrik"],
     description: "Lorem",
   },
   {
@@ -735,7 +735,7 @@ const pokedex = [
   {
     name: "M. Mime",
     imgSrc: "../src/assets/Miniature_122.png",
-    types: ["Psy", "Fée"],
+    types: ["Psy"],
     description: "Lorem",
   },
   {
@@ -943,10 +943,11 @@ function App() {
 
   return (
     <>
-
-      <Header imagesTypesList={imagesTypesList} />
-      <Main pokedex={pokedex} setCurrentModal={setCurrentModal} />
-      {modalIsOpen ? <div>{currentModalDescription}</div> : null}
+      <div className="display-site">
+        <Header imagesTypesList={imagesTypesList} />
+        <Main pokedex={pokedex} setCurrentModal={setCurrentModal} />
+        {modalIsOpen ? <div>{currentModalDescription}</div> : null}
+      </div>
       {/* Here Modal with currentModalDescription in propriete*/}
       <ScrollToTop />
       <Footer />

@@ -2,13 +2,14 @@ import CardsList from "./CardsList";
 import { Pokemon } from "./Card";
 import SearchBar from "./SearchBar";
 import { useState } from "react";
+import "../style/main.css";
 
 interface MainProps {
   pokedex: Pokemon[];
   setCurrentModal: (isOpen: boolean, description: string) => void;
 }
 
-export default function Main({ pokedex }: MainProps) {
+export default function Main({ pokedex, setCurrentModal }: MainProps) {
   const [filteredPoke, setFilteredPoke] = useState(pokedex);
 
   const handleSearch = (searchResults: Pokemon[]) => {
@@ -16,8 +17,14 @@ export default function Main({ pokedex }: MainProps) {
   };
   return (
     <main>
-      <h1>Filtrez les pokemons par types !</h1>
-      <img src="" alt="pokeball" />
+      <h1>
+        Filtrez les pokemons par types
+        <img
+          src="../src/assets/Miniature_Poké_Ball_EV.png"
+          alt="pokeball"
+          className="pokeball"
+        />
+      </h1>
       <SearchBar pokedex={pokedex} onSearch={handleSearch} />
       <CardsList pokedex={filteredPoke} setCurrentModal={setCurrentModal} />
     </main>
