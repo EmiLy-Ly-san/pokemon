@@ -9,3 +9,7 @@ html {
   box-sizing: border-box;
   width: 100%;
 }
+.display-site {
+  display: flex;
+  justify-content: flex-start;
+}
