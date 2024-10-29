@@ -4,6 +4,7 @@ import "../style/Header.css";
 
 interface HeaderProps {
   imagesTypesList: Type[];
+  id: string;
 }
 
 export default function Header({ imagesTypesList }: HeaderProps) {
