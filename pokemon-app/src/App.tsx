@@ -943,10 +943,11 @@ function App() {
 
   return (
     <>
-
-      <Header imagesTypesList={imagesTypesList} />
-      <Main pokedex={pokedex} setCurrentModal={setCurrentModal} />
-      {modalIsOpen ? <div>{currentModalDescription}</div> : null}
+      <div className="display-site">
+        <Header imagesTypesList={imagesTypesList} />
+        <Main pokedex={pokedex} setCurrentModal={setCurrentModal} />
+        {modalIsOpen ? <div>{currentModalDescription}</div> : null}
+      </div>
       {/* Here Modal with currentModalDescription in propriete*/}
       <ScrollToTop />
       <Footer />

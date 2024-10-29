@@ -1,9 +1,25 @@
 @import url("https://fonts.googleapis.com/css2?family=Audiowide&display=swap");
 
+main {
+}
 h1 {
   font-family: "Audiowide";
   color: #0279b9;
   font-weight: 400;
   font-size: 64px;
   text-align: center;
+}
+.pokeball {
+  width: 5%;
+}
+.input-bar {
+  display: flex;
+  justify-content: center;
+  flex-basis: 50%;
+}
+input {
+  width: 15rem;
+  height: 2rem;
+  font-family: "Audiowide";
+  color: #0279b9;
 }

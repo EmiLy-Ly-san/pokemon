@@ -26,12 +26,14 @@ function SearchBar({ pokedex, onSearch }: SearchBarProps) {
 
   return (
     <>
-      <input
-        type="text"
-        onChange={handleSearch}
-        value={searchValue}
-        placeholder="Recherche"
-      />
+      <div className="input-bar">
+        <input
+          type="text"
+          onChange={handleSearch}
+          value={searchValue}
+          placeholder="Recherche"
+        />
+      </div>
     </>
   );
 }

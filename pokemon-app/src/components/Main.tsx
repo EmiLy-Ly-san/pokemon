@@ -17,8 +17,14 @@ export default function Main({ pokedex, setCurrentModal }: MainProps) {
   };
   return (
     <main>
-      <h1>Filtrez les pokemons par types !</h1>
-      <img src="" alt="pokeball" />
+      <h1>
+        Filtrez les pokemons par types
+        <img
+          src="../src/assets/Miniature_Poké_Ball_EV.png"
+          alt="pokeball"
+          className="pokeball"
+        />
+      </h1>
       <SearchBar pokedex={pokedex} onSearch={handleSearch} />
       <CardsList pokedex={filteredPoke} setCurrentModal={setCurrentModal} />
     </main>
