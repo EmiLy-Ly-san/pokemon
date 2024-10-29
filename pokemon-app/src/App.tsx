@@ -3,7 +3,7 @@ import Header from "./components/Header";
 import Main from "./components/Main";
 import Modal from "./components/Modal";
 import Footer from "./components/Footer";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ScrollToTop from "./components/ScrollToTop";
 
 const pokedex = [
@@ -936,17 +936,22 @@ const imagesTypesList = [
 function App() {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [currentModalDescription, setCurrentModalDescription] = useState("");
+  const [pokemons, setPokemons] = useState(pokedex);
 
   const setCurrentModal = (isOpen: boolean, description: string) => {
     setModalIsOpen(isOpen);
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
     setCurrentModalDescription(description);
   };
 
-  const [pokemons, setPokemons] = useState(pokedex);
+  useEffect(() => {
+    if (modalIsOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+  }, [modalIsOpen]); // 🌈 Des que je fais quelque chose avec une des variables du tableau
+  //qui est en paramètre de useEffect, il existe ma fonction fléchée en premier paramètre
+
   const sortPokemons = (
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => {
@@ -960,15 +965,11 @@ function App() {
   return (
     <>
       <div className="display-site">
-        <Header
-          imagesTypesList={imagesTypesList}
-          pokedex={pokedex}
-          sortPokemons={sortPokemons}
-        />
+        <Header imagesTypesList={imagesTypesList} sortPokemons={sortPokemons} />
         <Main
-          pokedex={pokedex}
           setCurrentModal={setCurrentModal}
           pokemons={pokemons}
+          setPokemons={setPokemons}
         />
         {modalIsOpen ? (
           <Modal

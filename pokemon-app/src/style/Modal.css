@@ -11,7 +11,7 @@ body {
   align-items: center;
   padding: 1.5rem;
   border-radius: 1rem;
-  position: absolute;
+  position: fixed;
   top: 150px;
   left: 25%;
   z-index: 12;

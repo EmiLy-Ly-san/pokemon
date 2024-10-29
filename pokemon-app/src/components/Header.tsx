@@ -1,11 +1,9 @@
 import TypesList from "./TypesList";
 import { Type } from "./TypePoke";
 import "../style/Header.css";
-import { Pokemon } from "./Card";
 
 interface HeaderProps {
   imagesTypesList: Type[];
-  pokedex: Pokemon[];
   sortPokemons: (
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => void;
