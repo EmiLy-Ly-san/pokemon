@@ -8,7 +8,7 @@ interface MainProps {
   setCurrentModal: (isOpen: boolean, description: string) => void;
 }
 
-export default function Main({ pokedex }: MainProps) {
+export default function Main({ pokedex, setCurrentModal }: MainProps) {
   const [filteredPoke, setFilteredPoke] = useState(pokedex);
 
   const handleSearch = (searchResults: Pokemon[]) => {
