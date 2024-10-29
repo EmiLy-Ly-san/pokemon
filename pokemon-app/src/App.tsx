@@ -939,13 +939,21 @@ function App() {
 
   const setCurrentModal = (isOpen: boolean, description: string) => {
     setModalIsOpen(isOpen);
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
     setCurrentModalDescription(description);
   };
 
   return (
     <>
       <div className="display-site">
-        <Header imagesTypesList={imagesTypesList} />
+
+
+
+        <Header imagesTypesList={imagesTypesList} id="topPage" />
+ main
         <Main pokedex={pokedex} setCurrentModal={setCurrentModal} />
         {modalIsOpen ? (
           <Modal
