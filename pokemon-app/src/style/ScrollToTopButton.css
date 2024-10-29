@@ -19,9 +19,9 @@
     cursor: pointer;
     transition: border-image 0.01s ease-in-out;
 
-    /* &:hover {
+    &:hover {
       border-color: #4681a1;
-    } */
+    }
 
     .arrow-up {
       position: absolute;
@@ -37,10 +37,22 @@
     }
   }
 }
-.progress-circle .border-image {
+
+@media (max-width: 400px) {
+  .scroll-to-top-button {
+    bottom: 1em;
+    right: 5em;
+  }
 }
 
-@media (max-width: 768px) {
+@media (min-width: 400px) {
+  .scroll-to-top-button {
+    bottom: 1em;
+    right: 12.9em;
+  }
+}
+
+@media (min-width: 768px) {
   .scroll-to-top-button {
     bottom: 1em;
     right: 1em;
