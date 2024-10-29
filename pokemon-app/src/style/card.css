@@ -1,0 +1,105 @@
+.card {
+  border: solid 4px;
+  border-radius: 1rem;
+  height: 330px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.cardHeader {
+  background: #dddddd;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  height: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.titleCard {
+  font-family: Carter One;
+  font-size: 24px;
+  font-weight: 200;
+  text-align: center;
+}
+
+.pokePicture {
+  margin-top: -60px;
+}
+
+.cardFooter {
+  display: flex;
+  height: 60px;
+}
+
+.type {
+  font-family: Carter One;
+  font-size: 16px;
+  font-weight: 200;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+.background-Normal {
+  background: #919aa2;
+}
+
+.background-Eau {
+  background: #5090d6;
+}
+
+.background-Feu {
+  background: #ff9d55;
+}
+
+.background-Plante {
+  background: #63bc5a;
+}
+
+.background-Elektric {
+  background: #f4d23c;
+}
+
+.background-Roche {
+  background: #c5b78c;
+}
+
+.background-Sol {
+  background: #d97845;
+}
+
+.background-Poison {
+  background: #aa6bc8;
+}
+
+.background-Psy {
+  background: #fa7179;
+}
+
+.background-Vol {
+  background: #8fa9de;
+}
+
+.background-Combat {
+  background: #ce416b;
+}
+
+.background-Glace {
+  background: #73cec0;
+}
+
+.background-Spectre {
+  background: #73cec0;
+}
+
+.background-Insecte {
+  background: #91c12f;
+}
+
+.background-Dragon {
+  background: #0b6dc3;
+}
