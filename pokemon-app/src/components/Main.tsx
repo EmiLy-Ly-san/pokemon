@@ -18,7 +18,7 @@ export default function Main({ pokedex, setCurrentModal }: MainProps) {
   return (
     <main>
       <h1>
-        Filtrez les pokemons par types
+        Trouve tes pokemons préférés !
         <img
           src="../src/assets/Miniature_Poké_Ball_EV.png"
           alt="pokeball"

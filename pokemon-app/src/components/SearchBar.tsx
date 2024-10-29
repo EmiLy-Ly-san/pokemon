@@ -31,7 +31,7 @@ function SearchBar({ pokedex, onSearch }: SearchBarProps) {
           type="text"
           onChange={handleSearch}
           value={searchValue}
-          placeholder="Recherche"
+          placeholder="Recherche par nom"
         />
       </div>
     </>
