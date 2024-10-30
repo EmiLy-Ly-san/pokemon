@@ -19,6 +19,8 @@ body {
   font-size: 24px;
   font-weight: 200;
   background: white;
+  animation: appear 500ms ease-in;
+  opacity: 1;
 }
 
 .overlay {

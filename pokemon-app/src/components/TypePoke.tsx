@@ -18,15 +18,17 @@ export default function TypePoke({
 }: TypePokeProps) {
   return (
     <>
-      <section className="Type">
+      <div className="Type">
         <button
           type="button"
           data-type={name}
-          onClick={(event) => sortPokemons(event)}
+          onClick={(event) => {
+            sortPokemons(event);
+          }}
         >
           <img src={imgSrc} alt="" />
         </button>
-      </section>
+      </div>
     </>
   );
 }

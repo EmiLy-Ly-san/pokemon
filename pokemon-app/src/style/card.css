@@ -8,6 +8,9 @@
   justify-content: space-between;
   overflow: hidden;
   cursor: pointer;
+  opacity: 1;
+  animation: appear 500ms ease-in;
+  opacity: 1;
 }
 
 .cardHeader {

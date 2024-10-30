@@ -955,11 +955,15 @@ function App() {
   const sortPokemons = (
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => {
-    const newPokemons = pokedex.filter((pokemon) => {
-      return pokemon.types.includes(`${event.currentTarget.dataset.type}`);
-    });
-    console.log(`${event.currentTarget.dataset.type}`);
-    setPokemons(newPokemons);
+    if (`${event.currentTarget.dataset.type}` === "All") {
+      setPokemons(pokedex);
+    } else {
+      const newPokemons = pokedex.filter((pokemon) => {
+        return pokemon.types.includes(`${event.currentTarget.dataset.type}`);
+      });
+      console.log(`${event.currentTarget.dataset.type}`);
+      setPokemons(newPokemons);
+    }
   };
 
   return (

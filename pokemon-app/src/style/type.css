@@ -1,7 +1,13 @@
 img {
   width: 155px;
   margin: 2px;
+  opacity: 0.8;
 }
 img:hover {
   cursor: pointer;
+  opacity: 1;
+}
+
+img .active {
+  opacity: 1;
 }
