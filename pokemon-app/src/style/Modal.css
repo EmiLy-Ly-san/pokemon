@@ -4,16 +4,21 @@ body {
 
 .modal {
   border: solid 3px;
-  width: 60%;
-  min-height: 2%;
+  max-width: 80%;
+
+  height: 60%;
   display: flex;
   flex-direction: column;
+  /* gap: 5rem; */
   align-items: center;
+  justify-content: space-around;
   padding: 1.5rem;
   border-radius: 1rem;
   position: fixed;
-  top: 150px;
+  transform-origin: center;
+  top: 25%;
   left: 25%;
+  place-items: center;
   z-index: 12;
   font-family: Carter One;
   font-size: 24px;
@@ -41,6 +46,12 @@ button {
   background: none;
 }
 
+.description {
+  width: 50%;
+  font-size: 20px;
+  text-align: center;
+}
+
 .modalCross {
   width: 48px;
   align-self: flex-end;
@@ -50,4 +61,10 @@ button {
 
 hidden {
   display: none;
+}
+
+@media (max-width: 1390px) {
+  .modal {
+    left: 8%;
+  }
 }

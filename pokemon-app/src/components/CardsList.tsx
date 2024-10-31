@@ -3,7 +3,7 @@ import Card from "./Card";
 import "../style/cardsList.css";
 
 interface CardsListProps {
-  setCurrentModal: (isOpen: boolean, description: string) => void;
+  setCurrentModal: (isOpen: boolean, pokemon: Pokemon) => void;
   pokemons: Pokemon[];
 }
 

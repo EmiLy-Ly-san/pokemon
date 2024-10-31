@@ -7,8 +7,8 @@ export interface Pokemon {
   description: string;
 }
 
-export type CardProps = Pokemon & {
-  setCurrentModal: (isOpen: boolean, description: string) => void;
+type CardProps = Pokemon & {
+  setCurrentModal: (isOpen: boolean, pokemon: Pokemon) => void;
 };
 
 export default function Card({
@@ -21,7 +21,10 @@ export default function Card({
   return (
     <article
       className="card"
-      onClick={() => setCurrentModal(true, description)}>
+      onClick={() =>
+        setCurrentModal(true, { description, name, imgSrc, types })
+      }
+    >
       <div className="cardHeader">
         <h2 className="titleCard">{name}</h2>
       </div>

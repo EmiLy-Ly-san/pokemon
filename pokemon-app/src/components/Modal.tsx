@@ -1,12 +1,13 @@
 import "../style/Modal.css";
+import { Pokemon } from "./Card";
 interface ModalProps {
-  currentModalDescription: string;
+  currentModalPokemon: Pokemon | null;
   modalIsOpen: boolean;
   setModalIsOpen: (isOpen: boolean) => void;
 }
 
 export default function Modal({
-  currentModalDescription,
+  currentModalPokemon,
   modalIsOpen,
   setModalIsOpen,
 }: ModalProps) {
@@ -25,7 +26,10 @@ export default function Modal({
           />
         </button>
 
-        <p>{currentModalDescription}</p>
+        <img src={currentModalPokemon?.imgSrc} alt="" />
+        {/* currentModalPokemon? => if(currentModalPokemon) car pokemon peut etre null */}
+        <p>{currentModalPokemon?.name}</p>
+        <p className="description">{currentModalPokemon?.description}</p>
       </section>
       <section
         className={`overlay ${modalIsOpen == false && "hidden"}`}

@@ -1,13 +1,17 @@
 img {
   width: 155px;
   margin: 2px;
+}
+
+button {
   opacity: 0.8;
 }
-img:hover {
+
+button:hover {
   cursor: pointer;
   opacity: 1;
 }
 
-img .active {
+.active {
   opacity: 1;
 }

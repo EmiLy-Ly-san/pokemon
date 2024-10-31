@@ -5,6 +5,7 @@ import Modal from "./components/Modal";
 import Footer from "./components/Footer";
 import { useEffect, useState } from "react";
 import ScrollToTop from "./components/ScrollToTop";
+import { Pokemon } from "./components/Card";
 
 const pokedex = [
   {
@@ -1060,31 +1061,33 @@ const pokedex = [
 ];
 
 const imagesTypesList = [
-  { name: "Normal", imgSrc: "../src/assets/normal.png" },
-  { name: "Eau", imgSrc: "../src/assets/eau.png" },
-  { name: "Feu", imgSrc: "../src/assets/feu.png" },
-  { name: "Plante", imgSrc: "../src/assets/plante.png" },
-  { name: "Électrik", imgSrc: "../src/assets/electrik.png" },
-  { name: "Roche", imgSrc: "../src/assets/roche.png" },
-  { name: "Sol", imgSrc: "../src/assets/sol.png" },
-  { name: "Poison", imgSrc: "../src/assets/poison.png" },
-  { name: "Psy", imgSrc: "../src/assets/psy.png" },
-  { name: "Vol", imgSrc: "../src/assets/vol.png" },
-  { name: "Combat", imgSrc: "../src/assets/combat.png" },
-  { name: "Glace", imgSrc: "../src/assets/glace.png" },
-  { name: "Spectre", imgSrc: "../src/assets/spectre.png" },
-  { name: "Insecte", imgSrc: "../src/assets/insecte.png" },
-  { name: "Dragon", imgSrc: "../src/assets/dragon.png" },
+  { id: 1, name: "Normal", imgSrc: "../src/assets/normal.png" },
+  { id: 2, name: "Eau", imgSrc: "../src/assets/eau.png" },
+  { id: 3, name: "Feu", imgSrc: "../src/assets/feu.png" },
+  { id: 4, name: "Plante", imgSrc: "../src/assets/plante.png" },
+  { id: 5, name: "Électrik", imgSrc: "../src/assets/electrik.png" },
+  { id: 6, name: "Roche", imgSrc: "../src/assets/roche.png" },
+  { id: 7, name: "Sol", imgSrc: "../src/assets/sol.png" },
+  { id: 8, name: "Poison", imgSrc: "../src/assets/poison.png" },
+  { id: 9, name: "Psy", imgSrc: "../src/assets/psy.png" },
+  { id: 10, name: "Vol", imgSrc: "../src/assets/vol.png" },
+  { id: 11, name: "Combat", imgSrc: "../src/assets/combat.png" },
+  { id: 12, name: "Glace", imgSrc: "../src/assets/glace.png" },
+  { id: 13, name: "Spectre", imgSrc: "../src/assets/spectre.png" },
+  { id: 14, name: "Insecte", imgSrc: "../src/assets/insecte.png" },
+  { id: 15, name: "Dragon", imgSrc: "../src/assets/dragon.png" },
 ];
 
 function App() {
   const [modalIsOpen, setModalIsOpen] = useState(false);
-  const [currentModalDescription, setCurrentModalDescription] = useState("");
+  const [currentModalPokemon, setCurrentModalPokemon] =
+    useState<Pokemon | null>(null);
   const [pokemons, setPokemons] = useState(pokedex);
+  const [activeIdButton, setActiveIdButton] = useState(0);
 
-  const setCurrentModal = (isOpen: boolean, description: string) => {
+  const setCurrentModal = (isOpen: boolean, pokemon: Pokemon) => {
     setModalIsOpen(isOpen);
-    setCurrentModalDescription(description);
+    setCurrentModalPokemon(pokemon);
   };
 
   useEffect(() => {
@@ -1094,7 +1097,7 @@ function App() {
       document.body.style.overflow = "";
     }
   }, [modalIsOpen]); // 🌈 Des que je fais quelque chose avec une des variables du tableau
-  //qui est en paramètre de useEffect, il existe ma fonction fléchée en premier paramètre
+  //qui est en paramètre de useEffect, il exécute ma fonction fléchée en premier paramètre
 
   const sortPokemons = (
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>
@@ -1108,12 +1111,20 @@ function App() {
       console.log(`${event.currentTarget.dataset.type}`);
       setPokemons(newPokemons);
     }
+    setActiveIdButton(parseInt(`${event.currentTarget.dataset.id}`));
+    console.log(`${event.currentTarget.dataset.id}`);
+    console.log({ activeIdButton });
   };
 
   return (
     <>
       <div className="display-site">
-        <Header imagesTypesList={imagesTypesList} sortPokemons={sortPokemons} />
+        <Header
+          activeIdButton={activeIdButton}
+          setActiveIdButton={setActiveIdButton}
+          imagesTypesList={imagesTypesList}
+          sortPokemons={sortPokemons}
+        />
         <Main
           setCurrentModal={setCurrentModal}
           pokemons={pokemons}
@@ -1121,7 +1132,7 @@ function App() {
         />
         {modalIsOpen ? (
           <Modal
-            currentModalDescription={currentModalDescription}
+            currentModalPokemon={currentModalPokemon}
             setModalIsOpen={setModalIsOpen}
             modalIsOpen={modalIsOpen}
           />
