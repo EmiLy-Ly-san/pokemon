@@ -2,6 +2,16 @@ img {
   width: 155px;
   margin: 2px;
 }
-img:hover {
+
+button {
+  opacity: 0.8;
+}
+
+button:hover {
   cursor: pointer;
+  opacity: 1;
+}
+
+.active {
+  opacity: 1;
 }

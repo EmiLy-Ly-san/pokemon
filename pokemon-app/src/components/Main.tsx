@@ -4,7 +4,7 @@ import SearchBar from "./SearchBar";
 import "../style/main.css";
 
 interface MainProps {
-  setCurrentModal: (isOpen: boolean, description: string) => void;
+  setCurrentModal: (isOpen: boolean, pokemon: Pokemon) => void;
   pokemons: Pokemon[];
   setPokemons: (pokemons: Pokemon[]) => void;
 }

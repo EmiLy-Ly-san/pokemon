@@ -7,9 +7,16 @@ interface HeaderProps {
   sortPokemons: (
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => void;
+  activeIdButton: number;
+  setActiveIdButton: (id: number) => void;
 }
 
-export default function Header({ imagesTypesList, sortPokemons }: HeaderProps) {
+export default function Header({
+  imagesTypesList,
+  sortPokemons,
+  activeIdButton,
+  setActiveIdButton,
+}: HeaderProps) {
   return (
     <header>
       <img
@@ -18,6 +25,8 @@ export default function Header({ imagesTypesList, sortPokemons }: HeaderProps) {
         alt="logo Pokemon"
       />
       <TypesList
+        activeIdButton={activeIdButton}
+        setActiveIdButton={setActiveIdButton}
         imagesTypesList={imagesTypesList}
         sortPokemons={sortPokemons}
       />
