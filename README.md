@@ -3,13 +3,12 @@ Find your favorite pokemon in the first generation and check his description
 
 *****OUR FIRST PROJECT IN REACT WITH TYPESCRIPT*****
 
-=> Romain Lemonnier : web design, distribution et style des boutons "types" du header, style du header à droite.
+=> Romain Lemonnier : web design, distribution and style of header “type” buttons, header style on the right.
 
-=> Valentin Loiseau : constitution des données pokemon, filtrage des cartes pokemon par nom, style de la recherche par nom et du main.
+=> Valentin Loiseau : creation of pokemon data, filtering of pokemon cards by name, search style by name and hand.
 
-=> Thibault Prunet : fonctionnalités et style de la flèche scroll up, style du footer.
+=> Thibault Prunet : features and style of the scroll up arrow, style of the footer.
 
-=> Emilie De Duyver : architecture des composants react et des types, filtrage des cartes pokemons par type, animation des boutons "types", style et animation d'affichage des cartes pokemon, fonctionnalités et style du modal description du pokémon sélectionné.
-
+=> Emilie De Duyver : architecture of react components and types, filtering of pokemon cards by type, animation of "types" buttons, style and animation of display of pokemon cards, functionalities and style of the modal description of the selected pokemon.
 
 
