@@ -2,9 +2,12 @@ import "../style/Footer.css";
 
 function Footer() {
   return (
-    <div className="Footer">
-      <h2>© Les petits pédèstres dont un au lion</h2>
-    </div>
+    <footer>
+      <h2>
+        © The Real Team - Romain Lemonnier | Thibault Prunet | ValentinLoiseau |
+        Emilie De Duyver{" "}
+      </h2>
+    </footer>
   );
 }
 

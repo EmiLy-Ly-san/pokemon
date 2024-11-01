@@ -5,7 +5,7 @@
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
   z-index: 999;
-
+  margin-bottom: 80px;
   &.show {
     opacity: 1;
   }
@@ -35,26 +35,5 @@
       display: inline-block;
       border-radius: 0.2em;
     }
-  }
-}
-
-@media (max-width: 400px) {
-  .scroll-to-top-button {
-    bottom: 1em;
-    right: 5em;
-  }
-}
-
-@media (min-width: 400px) {
-  .scroll-to-top-button {
-    bottom: 1em;
-    right: 12.9em;
-  }
-}
-
-@media (min-width: 768px) {
-  .scroll-to-top-button {
-    bottom: 1em;
-    right: 1em;
   }
 }

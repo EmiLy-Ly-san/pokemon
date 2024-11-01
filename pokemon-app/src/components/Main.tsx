@@ -21,14 +21,14 @@ export default function Main({
   };
   return (
     <main>
-      <h1>
-        Trouve tes pokemons préférés !
+      <section className="titleSection">
+        <h1>Trouve tes pokemons préférés !</h1>
         <img
           src="../src/assets/Miniature_Poké_Ball_EV.png"
           alt="pokeball"
           className="pokeball"
         />
-      </h1>
+      </section>
       <SearchBar pokemons={pokemons} onSearch={handleSearch} />
       <CardsList setCurrentModal={setCurrentModal} pokemons={pokemons} />
     </main>

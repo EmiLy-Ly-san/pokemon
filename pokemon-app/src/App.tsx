@@ -1118,26 +1118,25 @@ function App() {
 
   return (
     <>
-      <div className="display-site">
-        <Header
-          activeIdButton={activeIdButton}
-          setActiveIdButton={setActiveIdButton}
-          imagesTypesList={imagesTypesList}
-          sortPokemons={sortPokemons}
+      <Header
+        activeIdButton={activeIdButton}
+        setActiveIdButton={setActiveIdButton}
+        imagesTypesList={imagesTypesList}
+        sortPokemons={sortPokemons}
+      />
+      <Main
+        setCurrentModal={setCurrentModal}
+        pokemons={pokemons}
+        setPokemons={setPokemons}
+      />
+      {modalIsOpen ? (
+        <Modal
+          currentModalPokemon={currentModalPokemon}
+          setModalIsOpen={setModalIsOpen}
+          modalIsOpen={modalIsOpen}
         />
-        <Main
-          setCurrentModal={setCurrentModal}
-          pokemons={pokemons}
-          setPokemons={setPokemons}
-        />
-        {modalIsOpen ? (
-          <Modal
-            currentModalPokemon={currentModalPokemon}
-            setModalIsOpen={setModalIsOpen}
-            modalIsOpen={modalIsOpen}
-          />
-        ) : null}
-      </div>
+      ) : null}
+
       <ScrollToTop />
       <Footer />
     </>

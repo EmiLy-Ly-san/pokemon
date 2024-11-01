@@ -2,6 +2,7 @@ input {
   border-radius: 15px;
   text-align: center;
   background-color: aliceblue;
+  margin-top: 16px;
 }
 input:focus::placeholder {
   color: transparent;

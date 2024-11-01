@@ -1,22 +1,80 @@
 .logopokemon {
   width: 300px;
+  cursor: pointer;
 }
 
 header {
   background-color: #2bb5ff;
-  width: 440px;
+  width: 25%;
   height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
+  gap: 100px;
   padding-top: 25px;
   position: sticky;
   top: 0;
 }
 
+.logoButton {
+  opacity: 1;
+}
+
+.typesListMini {
+  /* display: none; */
+  background-color: #2bb5ff;
+  width: 30%;
+  z-index: 10;
+  width: 100%;
+}
+
+.burgerMenu {
+  width: 36px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 200ms ease-in;
+  display: none;
+}
+
+.burgerMenu:hover {
+  background-color: white;
+}
+
+@media screen and (max-width: 1210px) {
+  .logopokemon {
+    width: 200px;
+  }
+}
+
+@media screen and (max-width: 825px) {
+  .logopokemon {
+    width: 175px;
+  }
+}
+
 @media screen and (max-width: 700px) {
   header {
+    position: initial;
+    width: 100%;
+    height: 108px;
+    gap: 0px;
+    padding-top: 8px;
+  }
+
+  .logopokemon {
+    width: 150px;
+  }
+
+  .listType {
     display: none;
+  }
+
+  .typeListMini {
+    display: block;
+  }
+
+  .burgerMenu {
+    display: block;
+    /* margin-bottom: 16px; */
   }
 }
