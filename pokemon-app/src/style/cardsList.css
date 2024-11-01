@@ -2,10 +2,8 @@
   display: flex;
   gap: 3rem;
   justify-content: center;
-  flex: auto;
+  align-items: center;
   flex-wrap: wrap;
-  /* border: solid 1px; */
   max-width: 1200px;
-  margin: auto;
   margin-top: 3rem;
 }

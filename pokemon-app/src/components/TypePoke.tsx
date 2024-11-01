@@ -25,7 +25,7 @@ export default function TypePoke({
   const active = activeIdButton === id ? "active" : "";
   return (
     <>
-      <div className="Type">
+      <div className="type">
         <button
           className={active}
           type="button"

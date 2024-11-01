@@ -106,3 +106,10 @@
 .background-Dragon {
   background: #0b6dc3;
 }
+
+@media screen and (max-width: 660px) {
+  .pokePicture {
+    margin-top: 0px;
+    align-self: center;
+  }
+}

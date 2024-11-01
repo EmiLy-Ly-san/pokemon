@@ -1,7 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Audiowide&display=swap");
 
 main {
-  padding-bottom: 3rem;
+  /* padding-bottom: 3rem; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 70%;
+  padding: 16px;
+}
+
+.titleSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 h1 {
@@ -12,17 +24,25 @@ h1 {
   text-align: center;
   margin: 1.5rem;
 }
+
 .pokeball {
-  width: 5%;
+  width: 56px;
 }
+
 .input-bar {
   display: flex;
   justify-content: center;
-  flex-basis: 50%;
 }
+
 input {
   width: 15rem;
   height: 2rem;
   font-family: "Audiowide";
   color: #0279b9;
 }
+
+/* @media screen and (max-width: 700px) {
+  .titleSection {
+    display: none;
+  }
+} */
