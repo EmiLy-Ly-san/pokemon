@@ -17,23 +17,22 @@ export default function Modal({
 
   return (
     <>
-      <section className={`modal ${modalIsOpen == false && "hidden"}`}>
-        <button onClick={closeModal}>
-          <img
-            className="modalCross"
-            src="./src/assets/icons8-fermer-48.png"
-            alt=""
-          />
-        </button>
+      <section className={`overlay ${modalIsOpen == false && "hidden"}`}>
+        <section className={`modal ${modalIsOpen == false && "hidden"}`}>
+          <button onClick={closeModal}>
+            <img
+              className="modalCross"
+              src="./src/assets/icons8-fermer-48.png"
+              alt=""
+            />
+          </button>
 
-        <img src={currentModalPokemon?.imgSrc} alt="" />
-        {/* currentModalPokemon? => if(currentModalPokemon) car pokemon peut etre null */}
-        <p>{currentModalPokemon?.name}</p>
-        <p className="description">{currentModalPokemon?.description}</p>
+          <img src={currentModalPokemon?.imgSrc} alt="" />
+          {/* currentModalPokemon? => if(currentModalPokemon) car pokemon peut etre null */}
+          <p>{currentModalPokemon?.name}</p>
+          <p className="description">{currentModalPokemon?.description}</p>
+        </section>
       </section>
-      <section
-        className={`overlay ${modalIsOpen == false && "hidden"}`}
-      ></section>
     </>
   );
 }

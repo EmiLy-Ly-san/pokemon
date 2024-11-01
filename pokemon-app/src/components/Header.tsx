@@ -27,14 +27,17 @@ export default function Header({
   ) => {
     const currentSrc: string | null = event.currentTarget.getAttribute("src");
     const nextSrc: string | null = event.currentTarget.getAttribute("data-src");
-    if (nextSrc) event.currentTarget.setAttribute("src", nextSrc);
-    if (currentSrc) event.currentTarget.setAttribute("data-src", currentSrc);
+
     if (isMenuOpen) {
       setMenuOpen(false);
       if (header && !isMenuOpen) header.style.height = "108px";
+      if (nextSrc) event.currentTarget.setAttribute("src", nextSrc);
+      if (currentSrc) event.currentTarget.setAttribute("data-src", currentSrc);
     } else {
       setMenuOpen(true);
       if (header && isMenuOpen) header.style.height = "600px";
+      if (nextSrc) event.currentTarget.setAttribute("src", nextSrc);
+      if (currentSrc) event.currentTarget.setAttribute("data-src", currentSrc);
     }
   };
 
@@ -66,6 +69,8 @@ export default function Header({
       />
       {isMenuOpen ? (
         <TypesListMini
+          isMenuOpen={isMenuOpen}
+          setMenuOpen={setMenuOpen}
           activeIdButton={activeIdButton}
           setActiveIdButton={setActiveIdButton}
           imagesTypesList={imagesTypesList}

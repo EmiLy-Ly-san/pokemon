@@ -41,8 +41,8 @@ input {
   color: #0279b9;
 }
 
-/* @media screen and (max-width: 700px) {
-  .titleSection {
-    display: none;
+@media screen and (max-width: 700px) {
+  h1 {
+    font-size: 24px;
   }
-} */
+}

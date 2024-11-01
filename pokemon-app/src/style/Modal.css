@@ -4,41 +4,37 @@
 
 .modal {
   border: solid 3px;
-  max-width: 80%;
-
+  width: 80%;
+  max-width: 780px;
   height: 60%;
   display: flex;
   flex-direction: column;
-  /* gap: 5rem; */
   align-items: center;
   justify-content: space-around;
   padding: 1.5rem;
   border-radius: 1rem;
-  position: fixed;
-  transform-origin: center;
-  top: 25%;
-  left: 25%;
-  place-items: center;
-  z-index: 12;
   font-family: Carter One;
   font-size: 24px;
   font-weight: 200;
   background: white;
   animation: appear 500ms ease-in;
   opacity: 1;
+  overflow-y: auto;
 }
 
 .overlay {
   position: fixed;
   top: 0;
-  bottom: 0;
   left: 0;
   right: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(3px);
   z-index: 11;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 button {
@@ -61,10 +57,4 @@ button {
 
 hidden {
   display: none;
-}
-
-@media (max-width: 1390px) {
-  .modal {
-    left: 8%;
-  }
 }

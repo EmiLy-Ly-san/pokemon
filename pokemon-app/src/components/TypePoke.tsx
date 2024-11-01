@@ -13,6 +13,8 @@ export type TypePokeProps = Type & {
   ) => void;
   activeIdButton: number;
   setActiveIdButton: (id: number) => void;
+  isMenuOpen: boolean;
+  setMenuOpen: (value: boolean) => void;
 };
 
 export default function TypePoke({
@@ -21,8 +23,21 @@ export default function TypePoke({
   name,
   id,
   activeIdButton,
+  isMenuOpen,
+  setMenuOpen,
 }: TypePokeProps) {
   const active = activeIdButton === id ? "active" : "";
+
+  const handleClick = (
+    event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
+    id: number
+  ) => {
+    sortPokemons(event, id);
+    if (isMenuOpen) {
+      setMenuOpen(false);
+    }
+  };
+
   return (
     <>
       <div className="type">
@@ -32,7 +47,7 @@ export default function TypePoke({
           data-id={id}
           data-type={name}
           onClick={(event) => {
-            sortPokemons(event, id);
+            handleClick(event, id);
           }}
         >
           <img src={imgSrc} alt="" />
