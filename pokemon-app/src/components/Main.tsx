@@ -23,6 +23,7 @@ export default function Main({
     <main>
       <section className="titleSection">
         <h1>Trouve tes pokemons préférés !</h1>
+
         <img
           src="../src/assets/Miniature_Poké_Ball_EV.png"
           alt="pokeball"

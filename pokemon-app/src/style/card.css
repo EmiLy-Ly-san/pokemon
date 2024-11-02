@@ -12,6 +12,11 @@
   opacity: 1;
 }
 
+.card:hover {
+  opacity: 0.5;
+  border-color: #ffcb05;
+}
+
 .cardHeader {
   background: #dddddd;
   height: 64px;
