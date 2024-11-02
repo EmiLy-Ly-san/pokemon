@@ -25,7 +25,7 @@ export default function Main({
         <h1>Trouve tes pokemons préférés !</h1>
 
         <img
-          src="../src/assets/Miniature_Poké_Ball_EV.png"
+          src="./assets/Miniature_Poké_Ball_EV.png"
           alt="pokeball"
           className="pokeball"
         />

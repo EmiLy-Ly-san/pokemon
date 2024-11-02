@@ -22,7 +22,7 @@ export default function Modal({
           <button onClick={closeModal}>
             <img
               className="modalCross"
-              src="./src/assets/icons8-fermer-48.png"
+              src="././assets/icons8-fermer-48.png"
               alt=""
             />
           </button>

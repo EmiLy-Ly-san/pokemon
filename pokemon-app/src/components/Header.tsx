@@ -40,17 +40,13 @@ export default function Header({
       <button className="logoButton" data-type="All" onClick={sortPokemons}>
         <img
           className="logopokemon"
-          src="../src/assets/pokemon-logo.png"
+          src="./assets/pokemon-logo.png"
           alt="logo Pokemon"
         />
       </button>
       <img
         className="burgerMenu"
-        src={
-          isMenuOpen
-            ? "../src/assets/openMenu.svg"
-            : "../src/assets/burgerMenu.svg"
-        }
+        src={isMenuOpen ? "./assets/openMenu.svg" : "./assets/burgerMenu.svg"}
         alt=""
         onClick={handleClick}
       />
