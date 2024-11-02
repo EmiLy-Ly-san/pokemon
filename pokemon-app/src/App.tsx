@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import { useEffect, useState } from "react";
 import ScrollToTop from "./components/ScrollToTop";
 import { Pokemon } from "./components/Card";
+import { BrowserRouter } from "react-router-dom";
 
 const pokedex = [
   {
@@ -1079,6 +1080,10 @@ const imagesTypesList = [
 ];
 
 function App() {
+  //BUILDING with github pages, refound in BrowserRouter component
+  const basename = import.meta.env.NODE === "production" ? "/pokemon" : "/";
+
+  //GENERALS STATES
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [currentModalPokemon, setCurrentModalPokemon] =
     useState<Pokemon | null>(null);
@@ -1090,6 +1095,7 @@ function App() {
     setCurrentModalPokemon(pokemon);
   };
 
+  //useEffect FOR MODAL CARD -> impossible to scroll durring modalIsOpen
   useEffect(() => {
     if (modalIsOpen) {
       document.body.style.overflow = "hidden";
@@ -1099,6 +1105,7 @@ function App() {
   }, [modalIsOpen]); // 🌈 Des que je fais quelque chose avec une des variables du tableau
   //qui est en paramètre de useEffect, il exécute ma fonction fléchée en premier paramètre
 
+  //FILTER GENERAL FONCTION ON POKEDEX
   const sortPokemons = (
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => {
@@ -1117,7 +1124,7 @@ function App() {
   };
 
   return (
-    <>
+    <BrowserRouter basename={basename}>
       <Header
         activeIdButton={activeIdButton}
         setActiveIdButton={setActiveIdButton}
@@ -1139,7 +1146,7 @@ function App() {
 
       <ScrollToTop />
       <Footer />
-    </>
+    </BrowserRouter>
   );
 }
 
