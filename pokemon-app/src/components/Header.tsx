@@ -22,32 +22,22 @@ export default function Header({
   const header = document.querySelector("header");
   const [isMenuOpen, setMenuOpen] = useState(false);
 
-  const handleClick = (
-    event: React.MouseEvent<HTMLImageElement, MouseEvent>
-  ) => {
-    const currentSrc: string | null = event.currentTarget.getAttribute("src");
-    const nextSrc: string | null = event.currentTarget.getAttribute("data-src");
-
+  const handleClick = () => {
+    setMenuOpen(
+      (currentMenuOpen) => !currentMenuOpen
+    ); /* 🆕 A chaque fois que je clique sur mon bouton, je dis que je veux setter la valeur de menu open a l'inverse de sa valeur courante grace a !currentMenuOpen. La fonction dans le set State prend en
+    parametre la valeur courante (currentMenuOpen -> donnee fournit par useState) au moment de mon setState. Cette facon de faire est la facon LAZY qui permet de setter le state de facon decaler 
+    (on lui dot d'attendre d'avoir terminer sa derniere operation),evitant des conflits si un utilisateur fait plein de clic tres vite */
     if (isMenuOpen) {
-      setMenuOpen(false);
       if (header && !isMenuOpen) header.style.height = "108px";
-      if (nextSrc) event.currentTarget.setAttribute("src", nextSrc);
-      if (currentSrc) event.currentTarget.setAttribute("data-src", currentSrc);
     } else {
-      setMenuOpen(true);
       if (header && isMenuOpen) header.style.height = "600px";
-      if (nextSrc) event.currentTarget.setAttribute("src", nextSrc);
-      if (currentSrc) event.currentTarget.setAttribute("data-src", currentSrc);
     }
   };
 
   return (
     <header>
-      <button
-        className="logoButton"
-        data-type="All"
-        onClick={(event) => sortPokemons(event)}
-      >
+      <button className="logoButton" data-type="All" onClick={sortPokemons}>
         <img
           className="logopokemon"
           src="../src/assets/pokemon-logo.png"
@@ -56,10 +46,13 @@ export default function Header({
       </button>
       <img
         className="burgerMenu"
-        src="../src/assets/burgerMenu.svg"
+        src={
+          isMenuOpen
+            ? "../src/assets/openMenu.svg"
+            : "../src/assets/burgerMenu.svg"
+        }
         alt=""
-        data-src="../src/assets/openMenu.svg"
-        onClick={(event) => handleClick(event)}
+        onClick={handleClick}
       />
       <TypesList
         activeIdButton={activeIdButton}
@@ -69,7 +62,6 @@ export default function Header({
       />
       {isMenuOpen ? (
         <TypesListMini
-          isMenuOpen={isMenuOpen}
           setMenuOpen={setMenuOpen}
           activeIdButton={activeIdButton}
           setActiveIdButton={setActiveIdButton}

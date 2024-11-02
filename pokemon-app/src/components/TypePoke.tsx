@@ -13,8 +13,7 @@ export type TypePokeProps = Type & {
   ) => void;
   activeIdButton: number;
   setActiveIdButton: (id: number) => void;
-  isMenuOpen: boolean;
-  setMenuOpen: (value: boolean) => void;
+  setMenuOpen?: (value: boolean) => void; //? 💡 optionnal property because of the two differents list types
 };
 
 export default function TypePoke({
@@ -23,7 +22,6 @@ export default function TypePoke({
   name,
   id,
   activeIdButton,
-  isMenuOpen,
   setMenuOpen,
 }: TypePokeProps) {
   const active = activeIdButton === id ? "active" : "";
@@ -33,7 +31,7 @@ export default function TypePoke({
     id: number
   ) => {
     sortPokemons(event, id);
-    if (isMenuOpen) {
+    if (setMenuOpen) {
       setMenuOpen(false);
     }
   };

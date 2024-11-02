@@ -9,7 +9,6 @@ export interface TypesListProps {
   ) => void;
   activeIdButton: number;
   setActiveIdButton: (id: number) => void;
-  isMenuOpen: boolean;
   setMenuOpen: (value: boolean) => void;
 }
 
@@ -18,7 +17,6 @@ export default function TypesListMini({
   sortPokemons,
   activeIdButton,
   setActiveIdButton,
-  isMenuOpen,
   setMenuOpen,
 }: TypesListProps) {
   return (
@@ -32,7 +30,6 @@ export default function TypesListMini({
               sortPokemons={sortPokemons}
               activeIdButton={activeIdButton}
               setActiveIdButton={setActiveIdButton}
-              isMenuOpen={isMenuOpen}
               setMenuOpen={setMenuOpen}
             />
           );
