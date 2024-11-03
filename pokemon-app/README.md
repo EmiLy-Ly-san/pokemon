@@ -2,7 +2,7 @@
 
 ## TODO:
 
-- replace deploy script by `"deploy": "gh-pages -b main -d build"`
+- replace deploy script by `"deploy": "gh-pages -b main -d dist"`
 - set github repo settings to point github pages on main branch
 
 AFTER that to deploy:
