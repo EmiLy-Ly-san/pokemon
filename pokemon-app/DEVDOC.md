@@ -1,16 +1,10 @@
 # Pokemon
 
-## TODO:
+## To deploy on Github Pages:
 
-- replace deploy script by `"deploy": "gh-pages -b main -d dist"`
-- set github repo settings to point github pages on main branch
-
-AFTER that to deploy:
-
-- **merge your code into main**
 - run `npm run deploy`
 - go to github page adress : https://emily-ly-san.github.io/pokemon/
-- CTRL + SHIFT + R to reloqd page zithout the cache to see the changes
+- CTRL + SHIFT + R to reload page zithout the cache to see the changes
 
 ## React + TypeScript + Vite
 
